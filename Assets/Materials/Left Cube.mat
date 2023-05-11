@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Left Cube
-  m_Shader: {fileID: 4800000, guid: 2755b1c0e8f7444969ebccf73f90146f, type: 3}
+  m_Shader: {fileID: 4800000, guid: 3c9035c2f14624ca4b966c784c5c3a7d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -50,7 +50,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a766ae7a557c94842815ec59f3a0f9db, type: 3}
+        m_Texture: {fileID: 2800000, guid: 74f16d54b619c4b2292989ea4d554fc9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -95,6 +95,7 @@ Material:
     - _UVSec: 0
     - _ZTest: 6
     - _ZWrite: 1
+    - _Zoom: 0
     m_Colors:
     - _BackColor: {r: 1, g: 0, b: 0, a: 1}
     - _Color: {r: 0, g: 0.38457632, b: 1, a: 1}

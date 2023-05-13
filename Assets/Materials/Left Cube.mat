@@ -8,12 +8,13 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Left Cube
-  m_Shader: {fileID: 4800000, guid: 76a16a6b0d74c40738dcb2999f9ea10e, type: 3}
+  m_Shader: {fileID: 4800000, guid: ebe7a8402495b417ebe7bfaa5437cde5, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords:
   - _ALPHATOMASK_ON
+  - _AXIS_Z
   - _ENABLE_ON
   - _OPTIONS_OFF
   - _ZTEST_ALWAYS
@@ -68,6 +69,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaToMask: 1
+    - _Axis: 2
     - _Boolean: 0
     - _Brightness: 1
     - _BumpScale: 1
@@ -93,6 +95,7 @@ Material:
     - _Samples: 100
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _Speed: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZTest: 6

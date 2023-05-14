@@ -8,11 +8,10 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Left Cube
-  m_Shader: {fileID: 4800000, guid: 11292003645234cdba58533c3428d621, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8f2b9e9d51a8e4642a64a762f300c746, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _SMOOTHSTEP_ON
+  m_ValidKeywords: []
   m_InvalidKeywords:
   - _ALPHATOMASK_ON
   - _AXIS_Z
@@ -20,6 +19,7 @@ Material:
   - _FUNCTION_SMOOTHSTEP
   - _OPTIONS_OFF
   - _OPTIONS_STEP
+  - _SMOOTHSTEP_ON
   - _ZTEST_ALWAYS
   - _ZTEST_ON
   - _ZWRITE_ON
@@ -76,13 +76,14 @@ Material:
     - _Boolean: 0
     - _Brightness: 1
     - _BumpScale: 1
+    - _Center: 0.5
     - _ColorMask: 15
     - _CullMode: 0
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 1
     - _DstFactor: 1
-    - _Edge: 0.797
+    - _Edge: 0.743
     - _Enable: 1
     - _FaceCulling: 2
     - _Function: 1
@@ -97,10 +98,11 @@ Material:
     - _OcclusionStrength: 1
     - _Options: 0
     - _Parallax: 0.02
+    - _Radius: 0.163
     - _Rotation: 0
     - _Samples: 100
     - _Sections: 10
-    - _Smooth: 0.295
+    - _Smooth: 0.075
     - _SmoothStep: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

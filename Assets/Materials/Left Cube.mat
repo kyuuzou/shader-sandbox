@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Left Cube
-  m_Shader: {fileID: 4800000, guid: 8f2b9e9d51a8e4642a64a762f300c746, type: 3}
+  m_Shader: {fileID: 4800000, guid: d9669e16cddc04394843d17ac5e4d2bc, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -69,6 +69,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _TextureA:
+        m_Texture: {fileID: 2800000, guid: a766ae7a557c94842815ec59f3a0f9db, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureB:
+        m_Texture: {fileID: 2800000, guid: 372e7b39fc8f34549ac25d8757965a2c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _AlphaToMask: 1
@@ -91,6 +99,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _Lerp: 0.466
     - _MaximumBrightness: 0.75
     - _Metallic: 0
     - _MinimumBrightness: 0.25
@@ -99,9 +108,11 @@ Material:
     - _Options: 0
     - _Parallax: 0.02
     - _Radius: 0.163
+    - _Repetitions: 4
     - _Rotation: 0
     - _Samples: 100
     - _Sections: 10
+    - _Size: 0.5
     - _Smooth: 0.075
     - _SmoothStep: 1
     - _SmoothnessTextureChannel: 0

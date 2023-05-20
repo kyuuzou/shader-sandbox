@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Left Cube
-  m_Shader: {fileID: 4800000, guid: 7f3837f9166674e82b3d710c864fd37c, type: 3}
+  m_Shader: {fileID: 4800000, guid: fedb875ed6f004db4bf27463adb73c9e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -85,6 +85,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaToMask: 1
+    - _Ambient: 1
     - _AnimationType: 1
     - _Axis: 2
     - _Boolean: 0

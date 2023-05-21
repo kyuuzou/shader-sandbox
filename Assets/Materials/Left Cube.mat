@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Left Cube
-  m_Shader: {fileID: 4800000, guid: c6385ab37deb24b6ba18a387868bf42a, type: 3}
+  m_Shader: {fileID: 4800000, guid: bf6c3f6eb3b3544e3bda0d6aec581029, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -74,6 +74,30 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ReflectionDetail:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectionExposure:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectionIntensity:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectionMetallic:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectionTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecularTexture:
+        m_Texture: {fileID: 2800000, guid: 4f36406615268480dbe5a0a85d500d00, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _TextureA:
         m_Texture: {fileID: 2800000, guid: a766ae7a557c94842815ec59f3a0f9db, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -92,6 +116,7 @@ Material:
     - _Brightness: 1
     - _BumpScale: 1
     - _Center: 0.5
+    - _ColorExposure: 1.83
     - _ColorMask: 15
     - _CullMode: 0
     - _Cutoff: 0.5
@@ -116,18 +141,27 @@ Material:
     - _Options: 0
     - _Parallax: 0.02
     - _Radius: 0.163
+    - _ReflectionDetail: 1
+    - _ReflectionExposure: 1
+    - _ReflectionIntensity: 0.851
+    - _ReflectionMetallic: 0
     - _Repetitions: 4
     - _Rotation: 0
     - _Samples: 100
     - _Sections: 10
+    - _Shininess: 0.687
     - _Size: 0.5
     - _Smooth: 0.075
     - _SmoothStep: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _SpecularIntensity: 1
+    - _SpecularPower: 1
     - _Speed: 1
     - _SrcBlend: 1
+    - _TexelDensity: 9
     - _UVSec: 0
+    - _UseUnitySampleTexCube: 0
     - _ZTest: 6
     - _ZWrite: 1
     - _Zoom: 0

@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Left Cube
-  m_Shader: {fileID: 4800000, guid: bf6c3f6eb3b3544e3bda0d6aec581029, type: 3}
+  m_Shader: {fileID: 4800000, guid: 5b8732b71aa7e4a29806a21039ffda98, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -21,6 +21,7 @@ Material:
   - _OPTIONS_OFF
   - _OPTIONS_STEP
   - _SMOOTHSTEP_ON
+  - _USEUNITYSAMPLETEXCUBE_ON
   - _ZTEST_ALWAYS
   - _ZTEST_ON
   - _ZWRITE_ON
@@ -91,7 +92,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ReflectionTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 8900000, guid: d1a5290fd2da84c6f9c6a1977ef59000, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecularTexture:
@@ -116,7 +117,7 @@ Material:
     - _Brightness: 1
     - _BumpScale: 1
     - _Center: 0.5
-    - _ColorExposure: 1.83
+    - _ColorExposure: 1.42
     - _ColorMask: 15
     - _CullMode: 0
     - _Cutoff: 0.5
@@ -126,6 +127,8 @@ Material:
     - _Edge: 0.743
     - _Enable: 1
     - _FaceCulling: 2
+    - _FresnelIntensity: 0.102
+    - _FresnelPower: 2.29
     - _Function: 1
     - _Gamma: 0
     - _GlossMapScale: 1
@@ -143,13 +146,13 @@ Material:
     - _Radius: 0.163
     - _ReflectionDetail: 1
     - _ReflectionExposure: 1
-    - _ReflectionIntensity: 0.851
+    - _ReflectionIntensity: 0.379
     - _ReflectionMetallic: 0
     - _Repetitions: 4
     - _Rotation: 0
     - _Samples: 100
     - _Sections: 10
-    - _Shininess: 0.687
+    - _Shininess: 0.661
     - _Size: 0.5
     - _Smooth: 0.075
     - _SmoothStep: 1
@@ -159,9 +162,9 @@ Material:
     - _SpecularPower: 1
     - _Speed: 1
     - _SrcBlend: 1
-    - _TexelDensity: 9
+    - _TexelDensity: 6.75
     - _UVSec: 0
-    - _UseUnitySampleTexCube: 0
+    - _UseUnitySampleTexCube: 1
     - _ZTest: 6
     - _ZWrite: 1
     - _Zoom: 0

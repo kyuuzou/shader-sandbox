@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Left Cube
-  m_Shader: {fileID: 4800000, guid: 5b8732b71aa7e4a29806a21039ffda98, type: 3}
+  m_Shader: {fileID: 4800000, guid: c4aeffd74176449c8acaedbecb279151, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -132,12 +132,12 @@ Material:
     - _Function: 1
     - _Gamma: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 1
     - _GlossyReflections: 1
     - _Lerp: 0.466
     - _LightIntensity: 1
     - _MaximumBrightness: 0.75
-    - _Metallic: 0
+    - _Metallic: 0.562
     - _MinimumBrightness: 0.25
     - _Mode: 0
     - _OcclusionStrength: 1

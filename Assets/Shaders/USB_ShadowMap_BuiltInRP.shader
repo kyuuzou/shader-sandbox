@@ -1,4 +1,4 @@
-Shader "Unlit/USB_ShadowMapBuiltInRP"
+Shader "Unlit/USB_ShadowMap_BuiltInRP"
 {
     Properties
     {

@@ -1,0 +1,26 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+RWTexture2D<float4> Result;
+
+Texture2D<float4> ColorTexture;
+SamplerState sampler_ColorTexture;
+
+// threads per axis, total of 64 (8x * 8y * 1z)
+[numthreads(8,8,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    uint width, height;
+    Result.GetDimensions(width, height);
+
+    // works for textures with wrap mode = clamp
+    float2 uv = float2(id.xy / float2(width, height));
+
+    // prevents edge bleeding on textures with wrap mode = repeat
+    //float2 uv = float2((id.xy + float2(0.5, 0.5)) / float2(width, height));
+
+    float4 color = ColorTexture.SampleLevel(sampler_ColorTexture, uv, 0);
+    Result[id.xy] = color;
+}

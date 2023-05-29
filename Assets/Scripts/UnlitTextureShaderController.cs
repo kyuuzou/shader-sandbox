@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class UnlitTextureComputeShaderInitializer : MonoBehaviour {
+public class UnlitTextureShaderController : MonoBehaviour {
 
     [SerializeField]
     private ComputeShader shader;

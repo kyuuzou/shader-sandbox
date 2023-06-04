@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Quad
-  m_Shader: {fileID: 4800000, guid: d8110497ed5a64e9086fcee86f5be392, type: 3}
+  m_Shader: {fileID: 4800000, guid: 57f0884b57e31423b8fa69e16c8ea636, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -103,5 +103,6 @@ Material:
     - _ColorMask: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FrontColor: {r: 0, g: 0.1271038, b: 1, a: 1}
+    - _MousePosition: {r: 514, g: 894, b: 0, a: 0}
     - _VertexPosition: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

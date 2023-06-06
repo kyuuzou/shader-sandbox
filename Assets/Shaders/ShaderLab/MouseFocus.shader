@@ -3,9 +3,6 @@ Shader "Unlit/MouseFocus"
     Properties
     {
         _MousePosition ("Mouse Position", Vector) = (0, 0, 0)
-        
-        [Toggle]
-        _ShowBaseColor ("Show Base Color", int) = 0
     }
 
     SubShader
@@ -50,13 +47,12 @@ Shader "Unlit/MouseFocus"
             {
                 float2 fragNormalizedPosition = i.uv.xy/_ScreenParams.w;
                 float distanceFromMouse = distance(i.worldPosition, _MousePosition.xy);
-                float focus = lerp(1.0, 0.0, distanceFromMouse * 5.0);
 
-                #if _SHOWBASECOLOR_ON
-    	            return float4(fragNormalizedPosition.xy + focus, focus, 1.0);
-                #else
-    	            return float4(fragNormalizedPosition.xy + focus, focus, 1.0);
-                #endif
+    	        return float4(
+    	            (distanceFromMouse > 0.3) ? fragNormalizedPosition.xy : 1.0 - fragNormalizedPosition.xy,
+                    0.0,
+    	            1.0
+    	        );
             }
 
             ENDCG

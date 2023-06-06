@@ -7,11 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Quad
+  m_Name: Mouse Focus
   m_Shader: {fileID: 4800000, guid: 57f0884b57e31423b8fa69e16c8ea636, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _SHOWBASECOLOR_ON
   m_InvalidKeywords:
   - _ALPHATOMASK_ON
   - _ENABLE_ON
@@ -90,6 +91,7 @@ Material:
     - _Parallax: 0.02
     - _Position: 0.429
     - _Samples: 100
+    - _ShowBaseColor: 1
     - _Smooth: 0.0224
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -103,6 +105,6 @@ Material:
     - _ColorMask: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FrontColor: {r: 0, g: 0.1271038, b: 1, a: 1}
-    - _MousePosition: {r: 514, g: 894, b: 0, a: 0}
+    - _MousePosition: {r: -0.515991, g: 2.560869, b: 0, a: 0}
     - _VertexPosition: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

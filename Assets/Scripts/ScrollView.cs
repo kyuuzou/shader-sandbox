@@ -101,6 +101,8 @@ public class ScrollView : MonoBehaviour {
             this.Focus(1);
         } else if (Input.GetKeyUp(KeyCode.LeftArrow)) {
             this.Focus(-1);
+        } else if (Input.GetMouseButtonUp(0)) {
+            this.Focus((Input.mousePosition.x > Screen.width * 0.5f) ? 1 : -1);
         }
     }
 }

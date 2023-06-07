@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 public class ScrollView : MonoBehaviour {
 
     [SerializeField]
-    private Transform[] shaderPrefabs;
+    private DefaultAsset shaderPrefabFolder;
+    
+    [SerializeField, ReadOnly]
+    private List<Transform> shaderPrefabs;
 
     [SerializeField]
     private TMP_Text title;
@@ -82,21 +86,40 @@ public class ScrollView : MonoBehaviour {
     }
 
     private Transform Instantiate(int index, float x) {
-        return Transform.Instantiate(
+        Transform shader = Transform.Instantiate(
             shaderPrefabs[index], 
             new Vector3(x, 0.0f, 0.0f),
             Quaternion.identity,
             this.transform
         );
+
+        shader.name = shaderPrefabs[index].name;
+        return shader;
     }
 
     private bool IsValidIndex(int index) {
-        return index >= 0 && index < this.shaderPrefabs.Length;
+        return index >= 0 && index < this.shaderPrefabs.Count;
     }
     
+    private void PrepareShaders() {
+        string rootPath = AssetDatabase.GetAssetPath(this.shaderPrefabFolder);
+        string[] guids = AssetDatabase.FindAssets("t:Prefab", new[]{ rootPath });
+        
+        foreach (string guid in guids) {
+            string assetPath = AssetDatabase.GUIDToAssetPath(guid);
+            Transform asset = AssetDatabase.LoadAssetAtPath<Transform>(assetPath);
+
+            if (asset != null) {
+                this.shaderPrefabs.Add(asset);
+            }
+        }
+    }
+
     private void Start() {
+        this.PrepareShaders();
+        
         for (int i = 0; i < 2; i++) {
-            visibleShaders.Add(this.Instantiate(i, i * 3.0f));
+            this.visibleShaders.Add(this.Instantiate(i, i * 3.0f));
             this.title.text = this.visibleShaders[0].name;
         }
     }

@@ -8,6 +8,7 @@ public class ScrollView : MonoBehaviour {
     [SerializeField]
     private Transform[] shaderPrefabs;
 
+    private int cachedFocusIncrement;
     private IEnumerator focusEnumerator;
     private int focusIndex;
     private List<Transform> visibleShaders;
@@ -17,9 +18,16 @@ public class ScrollView : MonoBehaviour {
     }
     
     private void Focus(int focusIncrement) {
-        if (this.focusEnumerator != null) {
+        if (focusIncrement == 0) {
             return;
         }
+        
+        if (this.focusEnumerator != null) {
+            this.cachedFocusIncrement = focusIncrement;
+            return;
+        }
+
+        this.cachedFocusIncrement = 0;
 
         this.focusEnumerator = this.FocusCoroutine(focusIncrement);
         this.StartCoroutine(this.focusEnumerator);
@@ -44,7 +52,7 @@ public class ScrollView : MonoBehaviour {
             this.visibleShaders.Insert(focusIncrement > 0 ? this.visibleShaders.Count : 0, newShader);
         }
 
-        float smoothTime = 0.5f;
+        float smoothTime = 0.25f;
         float currentVelocity = 0.0f;
         Vector3 position = this.transform.position;
         Vector3 targetPosition = position;
@@ -66,6 +74,7 @@ public class ScrollView : MonoBehaviour {
         }
 
         this.focusEnumerator = null;
+        this.Focus(this.cachedFocusIncrement);
     }
 
     private Transform Instantiate(int index, float x) {

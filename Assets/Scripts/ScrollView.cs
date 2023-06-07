@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-
+using TMPro;
 using UnityEngine;
 
 public class ScrollView : MonoBehaviour {
@@ -8,6 +8,9 @@ public class ScrollView : MonoBehaviour {
     [SerializeField]
     private Transform[] shaderPrefabs;
 
+    [SerializeField]
+    private TMP_Text title;
+    
     private int cachedFocusIncrement;
     private IEnumerator focusEnumerator;
     private int focusIndex;
@@ -42,6 +45,7 @@ public class ScrollView : MonoBehaviour {
         }
             
         this.focusIndex = focusIndex;
+        this.title.text = this.visibleShaders[focusIncrement > 0 ? this.visibleShaders.Count - 1 : 0].name;
 
         if (IsValidIndex(focusIndex + focusIncrement)) {
             Transform newShader = this.Instantiate(
@@ -93,6 +97,7 @@ public class ScrollView : MonoBehaviour {
     private void Start() {
         for (int i = 0; i < 2; i++) {
             visibleShaders.Add(this.Instantiate(i, i * 3.0f));
+            this.title.text = this.visibleShaders[0].name;
         }
     }
 

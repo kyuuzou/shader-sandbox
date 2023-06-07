@@ -12,7 +12,7 @@ Shader "Unlit/USB_AlphaToMask"
     }
     SubShader
     {
-        Tags { "Queue"="Geometry" "RenderType"="Opaque" }
+        Tags { "Queue"="Geometry" "RenderType"="Transparent" }
         AlphaToMask [_AlphaToMask]
         
         LOD 100

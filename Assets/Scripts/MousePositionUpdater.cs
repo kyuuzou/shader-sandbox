@@ -2,30 +2,35 @@ using UnityEngine;
 
 public class MousePositionUpdater : MonoBehaviour {
 
-    private new Camera camera;
-    private new Renderer renderer;
+    private Camera cachedCamera;
+    private Renderer cachedRenderer;
+    private Transform cachedTransform;
     private Material sharedMaterial;
-    private new Transform transform;
     
     private void Awake() {
-        this.renderer = this.GetComponent<Renderer>();
-        this.sharedMaterial = this.renderer.sharedMaterial;
-        this.transform = this.GetComponent<Transform>();
+        this.cachedRenderer = this.GetComponent<Renderer>();
+        this.sharedMaterial = this.cachedRenderer.sharedMaterial;
+        this.cachedTransform = this.GetComponent<Transform>();
     }
 
     private void Start() {
-        this.camera = Camera.main;
+        this.cachedCamera = Camera.main;
     }
     
     private void Update() {
         Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = this.transform.position.z - this.camera.transform.position.z;
-        mousePosition = this.camera.ScreenToWorldPoint(mousePosition);
-        mousePosition = this.transform.InverseTransformPoint(mousePosition);
+        Vector3 transformPosition = this.cachedTransform.position;
+        
+        mousePosition.z = transformPosition.z - this.cachedCamera.transform.position.z;
+        mousePosition = this.cachedCamera.ScreenToWorldPoint(mousePosition);
+        mousePosition = this.cachedTransform.InverseTransformPoint(mousePosition);
 
-        Vector3 localScale = this.transform.localScale; 
+        Vector3 localScale = this.cachedTransform.localScale; 
         mousePosition.x *= localScale.x;
         mousePosition.y *= localScale.y;
+
+        mousePosition.x += transformPosition.x;
+        mousePosition.y += transformPosition.y;
  
         this.sharedMaterial.SetVector("_MousePosition", mousePosition);
     }

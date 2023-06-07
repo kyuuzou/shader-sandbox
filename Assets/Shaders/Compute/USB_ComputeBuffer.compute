@@ -30,7 +30,6 @@ void CSMain (uint3 id : SV_DispatchThreadID)
 
     float2 uv = float2((id.xy + 0.5) / float2(width, height));
     float c = CircleShape(uv, CircleBuffer[id.x]);
-    c *= MainColor;
-    
-    Result[id.xy] = float4(c, c, c, 1);
+        
+    Result[id.xy] = float4(c * MainColor.rgb, 1);
 }

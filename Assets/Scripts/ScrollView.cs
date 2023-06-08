@@ -86,14 +86,16 @@ public class ScrollView : MonoBehaviour {
     }
 
     private Transform Instantiate(int index, float x) {
+        Transform prefab = shaderPrefabs[index];
+        
         Transform shader = Transform.Instantiate(
-            shaderPrefabs[index], 
+            prefab, 
             new Vector3(x, 0.0f, 0.0f),
-            Quaternion.identity,
+            prefab.rotation,
             this.transform
         );
 
-        shader.name = shaderPrefabs[index].name;
+        shader.name = prefab.name;
         return shader;
     }
 

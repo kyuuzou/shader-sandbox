@@ -7,6 +7,9 @@ Shader "Unlit/USB_SDF_Fruit"
         _CircleColor ("Circle Color", Color) = (1, 1, 1, 1)
         _CircleRad ("Circle Radius", Range(0.0, 0.5)) = 0.45
         _Edge ("Edge", Range(-0.5, 0.5)) = 0.0
+        
+        [Toggle]
+        _DemoMode ("Demo Mode", float) = 1
     }
     SubShader
     {
@@ -19,6 +22,7 @@ Shader "Unlit/USB_SDF_Fruit"
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+            #pragma shader_feature _DEMOMODE_ON
 
             #include "UnityCG.cginc"
 
@@ -82,6 +86,9 @@ Shader "Unlit/USB_SDF_Fruit"
 
             fixed4 frag (v2f i, bool face : SV_isFrontFace) : SV_Target
             {
+#if _DEMOMODE_ON
+                _Edge = abs(sin(_Time.x * 10)) - 0.5;
+#endif                
                 fixed4 col = tex2D(_MainTex, i.uv);
 
                 float3 rayOrigin = mul(unity_WorldToObject, float4(_WorldSpaceCameraPos, 1));

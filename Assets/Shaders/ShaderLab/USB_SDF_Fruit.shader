@@ -42,7 +42,7 @@ Shader "Unlit/USB_SDF_Fruit"
             sampler2D _MainTex;
             sampler2D _PlaneTex;
             float4 _MainTex_ST;
-            float4 _CircleCol;
+            float4 _CircleColor;
             float _CircleRad;
             float _Edge;
 
@@ -98,9 +98,9 @@ Shader "Unlit/USB_SDF_Fruit"
                     float c = length(uvP);
 
                     float4 circleColor = (smoothstep(c - 0.01, c + 0.01, _CircleRad - abs(pow(_Edge * (1 * 0.5), 2))));
-                    planeColor = tex2D(_PlaneTex, (uvP * (1 - abs(pow(_Edge * l, 2)))) - 0.5);
-                    //planeColor *= circleColor;
-                    //planeColor += (1 - circleColor) * _CircleCol;
+                    planeColor = tex2D(_PlaneTex, uvP * (1.0 + abs(pow(_Edge * l, 2))) - 0.5);
+                    planeColor *= circleColor;
+                    planeColor += (1.0 - circleColor) * _CircleColor;
                 }
                 
                 if (i.hitPos.y > _Edge)

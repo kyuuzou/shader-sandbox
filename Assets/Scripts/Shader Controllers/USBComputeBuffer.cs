@@ -19,7 +19,10 @@ public class USBComputeBuffer : MonoBehaviour {
 
     [SerializeField]
     private Color mainColor;
-    
+
+    [SerializeField]
+    private bool demoMode = true;
+
     private RenderTexture mainTexture;
     private int textureSize = 128;
 
@@ -76,6 +79,14 @@ public class USBComputeBuffer : MonoBehaviour {
     }
     
     private void Update() {
+        if (this.demoMode) {
+            float percentage = Mathf.Abs(Mathf.Sin(Time.time * 2.0f));
+            this.radius = percentage * 0.5f;
+            this.center = percentage * 1.0f;
+            this.smooth = percentage * 0.5f;
+            this.mainColor = new Color(percentage, 1 - percentage, Mathf.PingPong(Time.time, 1.0f));
+        }
+
         this.SetShaderTexture();
     }
 }

@@ -22,11 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: dd647ab04929644639c8613fcc9076a1, type: 2}
     - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.77
       objectReference: {fileID: 0}
     - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: m_LocalPosition.y
@@ -94,3 +94,4 @@ MonoBehaviour:
   center: 0.5
   smooth: 0.01
   mainColor: {r: 1, g: 0, b: 0, a: 1}
+  demoMode: 1

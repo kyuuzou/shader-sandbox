@@ -8,10 +8,10 @@ Shader "Unlit/USB_Blending"
         _Color ("Color", Color) = (1, 1, 1, 1)
         
         [Enum(UnityEngine.Rendering.BlendMode)]
-        _SrcBlend ("Source Blend Factor", Float) = 1
+        _SrcBlend ("Source Blend Factor", int) = 1
         
         [Enum(UnityEngine.Rendering.BlendMode)]
-        _DstBlend ("Destination Blend Factor", Float) = 1
+        _DstBlend ("Destination Blend Factor", int) = 1
     }
     SubShader
     {

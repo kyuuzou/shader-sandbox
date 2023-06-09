@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2227991972340378049, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: <Description>k__BackingField
+      value: Uses the Fresnel effect, which describes how light at media boundaries
+        alters reflection and transmission based on the angle of incidence.
+      objectReference: {fileID: 0}
     - target: {fileID: 2435637604150582784, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: m_Name
       value: USB_FresnelEffect
@@ -47,5 +52,50 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2435637604150582784, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 652929819995350521}
+    - targetCorrespondingSourceObject: {fileID: 2435637604150582784, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4146946165582248260}
   m_SourcePrefab: {fileID: 100100000, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+--- !u!1 &1451079914237387750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2435637604150582784, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+  m_PrefabInstance: {fileID: 3886142490824703462}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &652929819995350521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451079914237387750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72070e40ea8cac040ad168bc5c936d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propertyNames:
+  - _FresnelPower
+  minValue: 1
+  maxValue: 5
+  speed: 1
+--- !u!114 &4146946165582248260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451079914237387750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72070e40ea8cac040ad168bc5c936d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propertyNames:
+  - _FresnelIntensity
+  minValue: 0
+  maxValue: 1
+  speed: 1

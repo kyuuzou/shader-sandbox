@@ -8,7 +8,7 @@ Shader "Unlit/USB_AlphaToMask"
         _Color ("Color", Color) = (1, 1, 1, 1)
         
         [Toggle]
-        _AlphaToMask ("AlphaToMask", Float) = 0
+        _AlphaToMask ("AlphaToMask", int) = 0
     }
     SubShader
     {

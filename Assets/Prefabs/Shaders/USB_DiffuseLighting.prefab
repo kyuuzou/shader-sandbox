@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2227991972340378049, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: <Description>k__BackingField
-      value: Uses  Lambert's Cosine Law, which states that the light intensity from
+      value: Uses Lambert's Cosine Law, which states that the light intensity from
         a diffuse surface is proportional to the cosine of the incident angle.
       objectReference: {fileID: 0}
     - target: {fileID: 2435637604150582784, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}

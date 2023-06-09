@@ -2,8 +2,6 @@ Shader "Unlit/USB_Function_FLOOR"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
-        
         [IntRange]
         _Sections ("Sections", Range(2, 10)) = 5
         
@@ -34,8 +32,6 @@ Shader "Unlit/USB_Function_FLOOR"
                 float4 vertex : SV_POSITION;
             };
 
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
             float _Sections;
             float _Gamma;
 
@@ -43,7 +39,7 @@ Shader "Unlit/USB_Function_FLOOR"
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                o.uv = v.uv;
                 return o;
             }
 

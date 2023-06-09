@@ -14,7 +14,10 @@ public class ScrollView : MonoBehaviour {
 
     [SerializeField]
     private TMP_Text title;
-    
+
+    [SerializeField]
+    private TMP_Text description;
+
     private int cachedFocusIncrement;
     private Transform focusedShader;
     private IEnumerator focusEnumerator;
@@ -25,6 +28,23 @@ public class ScrollView : MonoBehaviour {
         this.visibleShaders = new List<Transform>(5);
     }
     
+    private void ChangeFocusedShader(int focusIndex, int focusIncrement) {
+        this.focusIndex = focusIndex;
+
+        this.focusedShader?.GetComponent<ShaderFrame>()?.OnLostFocus();
+        this.focusedShader = this.visibleShaders[focusIncrement > 0 ? this.visibleShaders.Count - 1 : 0];
+        this.title.text = this.focusedShader.name;
+
+        ShaderFrame focusedShaderFrame = this.focusedShader.GetComponent<ShaderFrame>();
+
+        if (focusedShaderFrame != null) {
+            focusedShaderFrame.OnFocus();
+            this.description.text = focusedShaderFrame.Description;
+        } else {
+            this.description.text = string.Empty;
+        }
+    }
+
     private void Focus(int focusIncrement) {
         if (focusIncrement == 0) {
             return;
@@ -48,22 +68,9 @@ public class ScrollView : MonoBehaviour {
             this.focusEnumerator = null;
             yield break;
         }
-            
-        this.focusIndex = focusIndex;
 
-        this.focusedShader.GetComponent<IFocusable>()?.OnLostFocus();
-        this.focusedShader = this.visibleShaders[focusIncrement > 0 ? this.visibleShaders.Count - 1 : 0];
-        this.focusedShader.GetComponent<IFocusable>()?.OnFocus();
-        this.title.text = this.focusedShader.name;
-
-        if (IsValidIndex(focusIndex + focusIncrement)) {
-            Transform newShader = this.Instantiate(
-                focusIndex + focusIncrement,
-                focusIncrement * 3.0f * 2.0f
-            );
-
-            this.visibleShaders.Insert(focusIncrement > 0 ? this.visibleShaders.Count : 0, newShader);
-        }
+        this.ChangeFocusedShader(focusIndex, focusIncrement);
+        this.SpawnNewShader(focusIndex, focusIncrement);
 
         float smoothTime = 0.25f;
         float currentVelocity = 0.0f;
@@ -80,11 +87,7 @@ public class ScrollView : MonoBehaviour {
             yield return null;
         } while (smoothTime > 0.0f);
 
-        if (IsValidIndex(focusIndex - focusIncrement * 2)) {
-            int indexToRemove = focusIncrement > 0 ? 0 : this.visibleShaders.Count - 1;
-            GameObject.Destroy(this.visibleShaders[indexToRemove].gameObject);
-            this.visibleShaders.RemoveAt(indexToRemove);
-        }
+        this.RemoveOldShader(focusIndex, focusIncrement);
 
         this.focusEnumerator = null;
         this.Focus(this.cachedFocusIncrement);
@@ -122,6 +125,25 @@ public class ScrollView : MonoBehaviour {
         }
     }
 
+    private void RemoveOldShader(int focusIndex, int focusIncrement) {
+        if (IsValidIndex(focusIndex - focusIncrement * 2)) {
+            int indexToRemove = focusIncrement > 0 ? 0 : this.visibleShaders.Count - 1;
+            GameObject.Destroy(this.visibleShaders[indexToRemove].gameObject);
+            this.visibleShaders.RemoveAt(indexToRemove);
+        }
+    }
+
+    private void SpawnNewShader(int focusIndex, int focusIncrement) {
+        if (IsValidIndex(focusIndex + focusIncrement)) {
+            Transform newShader = this.Instantiate(
+                focusIndex + focusIncrement,
+                focusIncrement * 3.0f * 2.0f
+            );
+
+            this.visibleShaders.Insert(focusIncrement > 0 ? this.visibleShaders.Count : 0, newShader);
+        }
+    }
+
     private void Start() {
         this.PrepareShaders();
 
@@ -129,8 +151,7 @@ public class ScrollView : MonoBehaviour {
             this.visibleShaders.Add(this.Instantiate(i, i * 3.0f));
         }
 
-        this.focusedShader = this.visibleShaders[0];
-        this.title.text = this.focusedShader.name;
+        this.ChangeFocusedShader(0, 0);
     }
 
     private void Update() {

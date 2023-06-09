@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2227991972340378049, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: showSkybox
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2435637604150582784, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: m_Name
       value: USB_CubeMapReflection
@@ -18,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e5b187a8431ea457ab23078e7d53b56f, type: 2}
     - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -50,9 +54,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2435637604150582784, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 515876058739141662}
-    - targetCorrespondingSourceObject: {fileID: 2435637604150582784, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 8299501425923588445}
     - targetCorrespondingSourceObject: {fileID: 2435637604150582784, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       insertIndex: -1
@@ -66,18 +67,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2435637604150582784, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
   m_PrefabInstance: {fileID: 3886142490824703462}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &515876058739141662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1451079914237387750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05dc181965022b345b0a700b7be8cbca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8299501425923588445
 MonoBehaviour:
   m_ObjectHideFlags: 0

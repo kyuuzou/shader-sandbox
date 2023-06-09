@@ -97,5 +97,5 @@ MonoBehaviour:
   propertyNames:
   - _FresnelIntensity
   minValue: 0
-  maxValue: 1
+  maxValue: 0.75
   speed: 1

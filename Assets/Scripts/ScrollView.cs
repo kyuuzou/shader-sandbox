@@ -16,6 +16,7 @@ public class ScrollView : MonoBehaviour {
     private TMP_Text title;
     
     private int cachedFocusIncrement;
+    private Transform focusedShader;
     private IEnumerator focusEnumerator;
     private int focusIndex;
     private List<Transform> visibleShaders;
@@ -49,7 +50,11 @@ public class ScrollView : MonoBehaviour {
         }
             
         this.focusIndex = focusIndex;
-        this.title.text = this.visibleShaders[focusIncrement > 0 ? this.visibleShaders.Count - 1 : 0].name;
+
+        this.focusedShader.GetComponent<IFocusable>()?.OnLostFocus();
+        this.focusedShader = this.visibleShaders[focusIncrement > 0 ? this.visibleShaders.Count - 1 : 0];
+        this.focusedShader.GetComponent<IFocusable>()?.OnFocus();
+        this.title.text = this.focusedShader.name;
 
         if (IsValidIndex(focusIndex + focusIncrement)) {
             Transform newShader = this.Instantiate(
@@ -119,11 +124,13 @@ public class ScrollView : MonoBehaviour {
 
     private void Start() {
         this.PrepareShaders();
-        
+
         for (int i = 0; i < 2; i++) {
             this.visibleShaders.Add(this.Instantiate(i, i * 3.0f));
-            this.title.text = this.visibleShaders[0].name;
         }
+
+        this.focusedShader = this.visibleShaders[0];
+        this.title.text = this.focusedShader.name;
     }
 
     private void Update() {

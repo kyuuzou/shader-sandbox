@@ -14,23 +14,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5630742892296494895, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5630742892296494895, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 6e9d87689d630479d975e57119281333, type: 2}
+      objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: m_RootOrder
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
-      propertyPath: m_LocalScale.x
-      value: -2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
-      propertyPath: m_LocalScale.y
-      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -42,22 +34,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
-      propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
@@ -98,6 +74,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 7200000, guid: 8ee95992c73e3403abdb630c3df090b2, type: 3}
-  colorTexture: {fileID: 2800000, guid: 74f16d54b619c4b2292989ea4d554fc9, type: 3}
+  colorTextureA: {fileID: 2800000, guid: 74f16d54b619c4b2292989ea4d554fc9, type: 3}
+  colorTextureB: {fileID: 2800000, guid: a766ae7a557c94842815ec59f3a0f9db, type: 3}
   textureSize: 256
   mainTexture: {fileID: 0}
+  demoMode: 1

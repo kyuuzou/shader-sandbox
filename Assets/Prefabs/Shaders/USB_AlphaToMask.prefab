@@ -194,7 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fa9aeb06f596074ab7126726e63774d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  propertyName: _AlphaToMask
+  propertyNames:
+  - _AlphaToMask
   minValue: 0
   maxValue: 1
   speed: 2

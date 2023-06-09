@@ -85,7 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72070e40ea8cac040ad168bc5c936d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  propertyName: _ColorMask
+  propertyNames:
+  - _ColorMask
   minValue: 0
   maxValue: 15
   speed: 0.5

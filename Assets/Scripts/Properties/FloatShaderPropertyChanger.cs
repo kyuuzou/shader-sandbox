@@ -3,9 +3,6 @@ using UnityEngine;
 public class FloatShaderPropertyChanger : ShaderPropertyChanger<float> {
 
     [SerializeField]
-    private string propertyName;
-
-    [SerializeField]
     private float minValue = 0.0f;
 
     [SerializeField]
@@ -16,6 +13,6 @@ public class FloatShaderPropertyChanger : ShaderPropertyChanger<float> {
 
     private void Update() {
         float value = Mathf.Abs(Mathf.Sin(Time.time * this.speed)) * (maxValue - minValue) + minValue;
-        this.SetProperty(this.propertyName, value);
+        this.SetProperty(value);
     }
 }

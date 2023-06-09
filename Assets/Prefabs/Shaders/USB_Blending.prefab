@@ -89,9 +89,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   propertyName: _SrcBlend
-  minValue: 0
+  minValue: 1
   maxValue: 10
-  speed: 0.75
+  speed: 0.5
 --- !u!114 &4683233414408404311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,4 +107,4 @@ MonoBehaviour:
   propertyName: _DstBlend
   minValue: 0
   maxValue: 10
-  speed: 1
+  speed: 0.25

@@ -5,11 +5,9 @@ public class MousePositionUpdater : MonoBehaviour {
     private Camera cachedCamera;
     private Renderer cachedRenderer;
     private Transform cachedTransform;
-    private Material sharedMaterial;
     
     private void Awake() {
         this.cachedRenderer = this.GetComponent<Renderer>();
-        this.sharedMaterial = this.cachedRenderer.sharedMaterial;
         this.cachedTransform = this.GetComponent<Transform>();
     }
 
@@ -32,6 +30,6 @@ public class MousePositionUpdater : MonoBehaviour {
         mousePosition.x += transformPosition.x;
         mousePosition.y += transformPosition.y;
  
-        this.sharedMaterial.SetVector("_MousePosition", mousePosition);
+        this.cachedRenderer.material.SetVector("_MousePosition", mousePosition);
     }
 }

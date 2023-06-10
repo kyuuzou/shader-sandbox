@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public abstract class ShaderPropertyChanger<T> : MonoBehaviour {
@@ -15,7 +14,7 @@ public abstract class ShaderPropertyChanger<T> : MonoBehaviour {
 
     protected void SetProperty(T value) {
         foreach (string propertyName in this.propertyNames) {
-            this.Renderer.sharedMaterial.SetProperty<T>(propertyName, value);
+            this.Renderer.material.SetProperty<T>(propertyName, value);
         }
     }
 

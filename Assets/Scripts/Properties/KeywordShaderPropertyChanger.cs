@@ -9,7 +9,7 @@ public class KeywordShaderPropertyChanger : ShaderPropertyChanger<string> {
 
     private void Start() {
         this.DisableAllKeywords();
-        this.Renderer.sharedMaterial.EnableKeyword(this.PropertyNames[this.currentIndex]);
+        this.Renderer.material.EnableKeyword(this.PropertyNames[this.currentIndex]);
     }
 
     protected override void Update() {
@@ -23,14 +23,14 @@ public class KeywordShaderPropertyChanger : ShaderPropertyChanger<string> {
             return;
         }
 
-        this.Renderer.sharedMaterial.DisableKeyword(this.PropertyNames[this.currentIndex]);
+        this.Renderer.material.DisableKeyword(this.PropertyNames[this.currentIndex]);
         this.currentIndex = index;
-        this.Renderer.sharedMaterial.EnableKeyword(this.PropertyNames[index]);
+        this.Renderer.material.EnableKeyword(this.PropertyNames[index]);
     }
 
     private void DisableAllKeywords() {
         foreach (string keyword in this.PropertyNames) {
-            this.Renderer.sharedMaterial.DisableKeyword(keyword);
+            this.Renderer.material.DisableKeyword(keyword);
         }
     }
 }

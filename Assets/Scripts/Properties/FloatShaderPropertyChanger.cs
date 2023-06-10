@@ -11,7 +11,7 @@ public class FloatShaderPropertyChanger : ShaderPropertyChanger<float> {
     [SerializeField]
     private float speed = 1.0f;
 
-    private void Update() {
+    protected override void Update() {
         float value = Mathf.Abs(Mathf.Sin(Time.time * this.speed)) * (maxValue - minValue) + minValue;
         this.SetProperty(value);
     }

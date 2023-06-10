@@ -1,24 +1,23 @@
 using System;
 using UnityEngine;
 
-public class ShaderPropertyChanger<T> : MonoBehaviour {
+public abstract class ShaderPropertyChanger<T> : MonoBehaviour {
 
-    private new Renderer renderer;
+    protected Renderer Renderer { get; private set; }
 
     [SerializeField]
     private string[] propertyNames;
+    protected string[] PropertyNames => this.propertyNames;
 
     private void Awake() {
-        this.renderer = this.GetComponent<Renderer>();
+        this.Renderer = this.GetComponent<Renderer>();
     }
 
     protected void SetProperty(T value) {
         foreach (string propertyName in this.propertyNames) {
-            this.renderer.sharedMaterial.SetProperty<T>(propertyName, value);
+            this.Renderer.sharedMaterial.SetProperty<T>(propertyName, value);
         }
     }
 
-    private void Update() {
-        
-    }
+    protected abstract void Update();
 }

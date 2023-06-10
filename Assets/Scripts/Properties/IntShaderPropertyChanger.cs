@@ -11,8 +11,11 @@ public class IntShaderPropertyChanger : ShaderPropertyChanger<int> {
     [SerializeField]
     private float speed = 1.0f;
 
-    private void Update() {
+    protected override void Update() {
+        // make each value stay on screen about the same time
+        float maxValue = this.maxValue + 0.99f;
+        
         float value = Mathf.Abs(Mathf.Sin(Time.time * this.speed)) * (maxValue - minValue) + minValue;
-        this.SetProperty(Mathf.RoundToInt(value));
+        this.SetProperty(Mathf.FloorToInt(value));
     }
 }

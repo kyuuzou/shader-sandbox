@@ -66,7 +66,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BumpScale: 1
-    - _ColorExposure: 1
+    - _ColorExposure: 2.6999443
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -77,12 +77,12 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _ReflectionIntensity: 1
-    - _Shininess: 0
+    - _ReflectionIntensity: 0.8499721
+    - _Shininess: 0.8499721
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TexelDensity: 1
+    - _TexelDensity: 7.799777
     - _UVSec: 0
     - _UseUnitySampleTexCube: 0
     - _ZWrite: 1

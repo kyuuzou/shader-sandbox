@@ -2,8 +2,6 @@ Shader "Unlit/USB_Function_STEP"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
-        
         [Toggle]
         _SmoothStep ("Smooth Step", Int) = 0
         
@@ -36,8 +34,6 @@ Shader "Unlit/USB_Function_STEP"
                 float4 vertex : SV_POSITION;
             };
 
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
             float _Edge;
             float _Smooth;
 
@@ -45,7 +41,7 @@ Shader "Unlit/USB_Function_STEP"
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                o.uv = v.uv;
                 return o;
             }
 

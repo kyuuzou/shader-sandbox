@@ -7,18 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MouseFocus
-  m_Shader: {fileID: 4800000, guid: 57f0884b57e31423b8fa69e16c8ea636, type: 3}
+  m_Name: USB_ZWrite Left
+  m_Shader: {fileID: 4800000, guid: 33bb1b4eaf38d4e8a9a901dc559b3490, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _SHOWBASECOLOR_ON
+  m_ValidKeywords: []
   m_InvalidKeywords:
-  - _ALPHATOMASK_ON
-  - _ENABLE_ON
-  - _OPTIONS_OFF
-  - _ZTEST_ALWAYS
-  - _ZTEST_ON
   - _ZWRITE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -51,7 +45,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 10307, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 2800000, guid: a766ae7a557c94842815ec59f3a0f9db, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -68,43 +62,23 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaToMask: 1
-    - _Boolean: 0
-    - _Brightness: 0.08
     - _BumpScale: 1
-    - _ColorMask: 15
-    - _CullMode: 0
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DstBlend: 1
-    - _DstFactor: 1
-    - _Enable: 1
-    - _FaceCulling: 2
+    - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _K: 0.382
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Options: 0
     - _Parallax: 0.02
-    - _Position: 0.429
-    - _Samples: 100
-    - _ShowBaseColor: 1
-    - _Smooth: 0.0224
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _ZTest: 6
     - _ZWrite: 1
     m_Colors:
-    - _BackColor: {r: 1, g: 0, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorMask: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FrontColor: {r: 0, g: 0.1271038, b: 1, a: 1}
-    - _MousePosition: {r: -1.9902835, g: 0.26033244, b: 0, a: 0}
-    - _VertexPosition: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

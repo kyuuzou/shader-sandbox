@@ -51,7 +51,7 @@ Shader "Unlit/USB_Function_LERP"
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 colA = tex2D(_TextureA, i.uvA);
-                fixed4 colB = tex2D(_TextureB, i.uvB);
+                fixed4 colB = tex2D(_TextureB, i.uvA);
                 return lerp(colA, colB, _Lerp);
             }
             ENDCG

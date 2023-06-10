@@ -2,7 +2,6 @@ Shader "Unlit/USB_Function_LENGTH"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
         _Radius ("Radius", Range(0.0, 0.5)) = 0.3
         _Center ("Center", Range(0, 1)) = 0.5
         _Smooth ("Smooth", Range(0.0, 0.5)) = 0.01
@@ -32,8 +31,6 @@ Shader "Unlit/USB_Function_LENGTH"
                 float4 vertex : SV_POSITION;
             };
 
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
             float _Smooth;
             float _Radius;
             float _Center;
@@ -48,7 +45,7 @@ Shader "Unlit/USB_Function_LENGTH"
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                o.uv = v.uv;
                 return o;
             }
 

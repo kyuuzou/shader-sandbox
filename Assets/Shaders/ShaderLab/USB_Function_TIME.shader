@@ -19,7 +19,7 @@ Shader "Unlit/USB_Function_TIME"
             #pragma fragment frag
 
             #include "UnityCG.cginc"
-            #pragma multi_compile _ANIMATIONTYPE_NONE _ANIMATIONTYPE_SCROLL _ANIMATIONTYPE_ROTATE
+            #pragma multi_compile _ANIMATIONTYPE_SCROLL _ANIMATIONTYPE_ROTATE
             
             struct appdata
             {

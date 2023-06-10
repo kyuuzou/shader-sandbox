@@ -23,8 +23,6 @@ public class KeywordShaderPropertyChanger : ShaderPropertyChanger<string> {
             return;
         }
 
-        Debug.Log(index);
-
         this.Renderer.sharedMaterial.DisableKeyword(this.PropertyNames[this.currentIndex]);
         this.currentIndex = index;
         this.Renderer.sharedMaterial.EnableKeyword(this.PropertyNames[index]);

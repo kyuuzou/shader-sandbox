@@ -74,8 +74,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   propertyNames:
   - _SrcBlend
-  minValue: 1
-  maxValue: 10
+  minValue: 3
+  maxValue: 6
   speed: 0.5
 --- !u!114 &4683233414408404311
 MonoBehaviour:

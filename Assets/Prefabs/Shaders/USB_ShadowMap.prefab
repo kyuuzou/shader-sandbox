@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451079914237387750}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 77.86206, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -120,8 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4ca0295a1099b4fa1fe8e09ed03a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Description>k__BackingField: Uses two passes, "Shadow Caster" to project shadows,
-    and "Shadow Map Texture" to receive shadows.
+  <Description>k__BackingField: Using the built-in RP, goes through two passes, "Shadow
+    Caster" to project shadows, and "Shadow Map Texture" to receive shadows.
   showSkybox: 1
   toggleOtherBehaviours: 0
 --- !u!1 &1851482146860287678

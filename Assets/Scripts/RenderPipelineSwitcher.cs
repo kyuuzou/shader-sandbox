@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -7,7 +6,7 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(TMP_Dropdown))]
 public class RenderPipelineSwitcher : MonoBehaviour {
 
-    private enum RenderPipeline {
+    public enum RenderPipeline {
         BuiltIn = 0,
         Universal = 1
     }
@@ -17,9 +16,12 @@ public class RenderPipelineSwitcher : MonoBehaviour {
     
     private TMP_Dropdown dropdown;
 
+    public static RenderPipelineSwitcher Instance;
+
     private void Awake() {
-        Assert.IsNotNull(this.universalRenderPipelineAsset);
-        
+        Assert.IsNotNull(universalRenderPipelineAsset);
+
+        RenderPipelineSwitcher.Instance = this;
         this.dropdown = this.GetComponent<TMP_Dropdown>();
     }
 
@@ -28,11 +30,16 @@ public class RenderPipelineSwitcher : MonoBehaviour {
     }
 
     private void OnDropdownValueChanged(int value) {
-        RenderPipelineAsset asset = (value == (int) RenderPipeline.Universal) ? universalRenderPipelineAsset : null;
+        SetPipeline((RenderPipeline)value);
+    }
+
+    public void SetPipeline(RenderPipeline pipeline) {
+        RenderPipelineAsset asset = (pipeline == RenderPipeline.Universal) ? universalRenderPipelineAsset : null;
         GraphicsSettings.defaultRenderPipeline = asset;
         QualitySettings.renderPipeline = asset;
+        this.dropdown.SetValueWithoutNotify((int)pipeline);
     }
-    
+
     private void Start() {
         bool isBuiltInPipeline = GraphicsSettings.defaultRenderPipeline == null; 
         this.dropdown.value = (int)(isBuiltInPipeline ? RenderPipeline.BuiltIn : RenderPipeline.Universal);

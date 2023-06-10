@@ -13,6 +13,9 @@ public class ShaderFrame : MonoBehaviour {
     [SerializeField]
     private bool toggleOtherBehaviours = false;
 
+    [SerializeField]
+    private RenderPipelineSwitcher.RenderPipeline renderPipeline;
+
     public void OnFocus() {
         if (showSkybox) {
             Camera.main.clearFlags = CameraClearFlags.Skybox;
@@ -20,6 +23,10 @@ public class ShaderFrame : MonoBehaviour {
 
         if (toggleOtherBehaviours) {
             this.SetOtherBehavioursActive(true);
+        }
+
+        if (renderPipeline != RenderPipelineSwitcher.RenderPipeline.BuiltIn) {
+            RenderPipelineSwitcher.Instance.SetPipeline(renderPipeline);
         }
     }
 
@@ -30,6 +37,10 @@ public class ShaderFrame : MonoBehaviour {
 
         if (toggleOtherBehaviours) {
             this.SetOtherBehavioursActive(false);
+        }
+
+        if (renderPipeline != RenderPipelineSwitcher.RenderPipeline.BuiltIn) {
+            RenderPipelineSwitcher.Instance.SetPipeline(RenderPipelineSwitcher.RenderPipeline.BuiltIn);
         }
     }
 

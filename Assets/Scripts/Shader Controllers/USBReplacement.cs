@@ -1,10 +1,7 @@
 using UnityEngine;
 
 [ExecuteInEditMode]
-public class ShaderReplacer : MonoBehaviour {
-
-    [SerializeField]
-    private new Camera camera;
+public class USBReplacement : MonoBehaviour {
 
     [SerializeField]
     private Shader replacementShader;
@@ -14,7 +11,7 @@ public class ShaderReplacer : MonoBehaviour {
             return;
         }
 
-        this.camera.SetReplacementShader(this.replacementShader, "RenderType");
+        Camera.main.SetReplacementShader(this.replacementShader, "RenderType");
     }
 
     private void OnDisable() {
@@ -22,11 +19,12 @@ public class ShaderReplacer : MonoBehaviour {
             return;
         }
 
-        this.camera.ResetReplacementShader();
+        Camera.main.ResetReplacementShader();
     }
 
     private bool Validate() {
-        if (this.camera == null || this.replacementShader == null) {
+        if (this.replacementShader == null) {
+            Debug.LogError("No replacement shader found!");
             return false;
         }
 

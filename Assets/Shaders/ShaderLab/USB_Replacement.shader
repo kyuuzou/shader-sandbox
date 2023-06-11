@@ -1,4 +1,4 @@
-Shader "Unlit/USB_Replacement_Shader"
+Shader "Unity Shaders Bible/USB_Replacement_Shader"
 {
     Properties
     {

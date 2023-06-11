@@ -1,4 +1,4 @@
-Shader "Unlit/USB_Blending"
+Shader "Unity Shaders Bible/USB_Blending"
 {
     Properties
     {

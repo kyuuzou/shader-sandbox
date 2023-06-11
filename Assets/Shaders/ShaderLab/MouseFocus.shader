@@ -1,4 +1,4 @@
-Shader "Unlit/MouseFocus"
+Shader "Custom/MouseFocus"
 {
     Properties
     {

@@ -1,4 +1,4 @@
-Shader "Unlit/USB_AlphaToMask"
+Shader "Unity Shaders Bible/USB_AlphaToMask"
 {
     Properties
     {

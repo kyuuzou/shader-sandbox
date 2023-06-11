@@ -1,4 +1,4 @@
-Shader "Unlit/USB_Function_TIME"
+Shader "Unity Shaders Bible/USB_Function_TIME"
 {
     Properties
     {

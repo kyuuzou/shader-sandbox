@@ -1,4 +1,4 @@
-Shader "Unlit/USB_Culling"
+Shader "Unity Shaders Bible/USB_Culling"
 {
     Properties
     {

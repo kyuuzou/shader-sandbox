@@ -1,4 +1,4 @@
-Shader "Unlit/USB_SpecularReflection"
+Shader "Unity Shaders Bible/USB_SpecularReflection"
 {
     Properties
     {

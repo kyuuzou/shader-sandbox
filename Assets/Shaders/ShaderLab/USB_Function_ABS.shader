@@ -1,4 +1,4 @@
-Shader "Unlit/USB_Function_ABS"
+Shader "Unity Shaders Bible/USB_Function_ABS"
 {
     Properties
     {

@@ -1,4 +1,4 @@
-Shader "Unlit/USB_Function_FLOOR"
+Shader "Unity Shaders Bible/USB_Function_FLOOR"
 {
     Properties
     {

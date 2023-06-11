@@ -1,4 +1,4 @@
-Shader "Unlit/USB_AmbientColor"
+Shader "Unity Shaders Bible/USB_AmbientColor"
 {
     Properties
     {

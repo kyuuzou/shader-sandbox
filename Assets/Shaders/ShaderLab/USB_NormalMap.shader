@@ -1,4 +1,4 @@
-Shader "Unlit/USB_NormalMap"
+Shader "Unity Shaders Bible/USB_NormalMap"
 {
     Properties
     {

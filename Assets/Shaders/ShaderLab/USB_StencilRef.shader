@@ -1,4 +1,4 @@
-Shader "Unlit/USB_StencilRef"
+Shader "Unity Shaders Bible/USB_StencilRef"
 {
     Properties
     {

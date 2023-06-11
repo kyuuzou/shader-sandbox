@@ -1,4 +1,4 @@
-Shader "Unlit/USB_Function_FRAC"
+Shader "Unity Shaders Bible/USB_Function_FRAC"
 {
     Properties
     {

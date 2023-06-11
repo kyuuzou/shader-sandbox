@@ -1,4 +1,4 @@
-Shader "Unlit/USB_FresnelEffect"
+Shader "Unity Shaders Bible/USB_FresnelEffect"
 {
     Properties
     {

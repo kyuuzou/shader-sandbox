@@ -1,4 +1,4 @@
-Shader "Unlit/USB_ColorMask"
+Shader "Unity Shaders Bible/USB_ColorMask"
 {
     Properties
     {

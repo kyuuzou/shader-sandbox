@@ -1,4 +1,4 @@
-Shader "Unlit/USB_DiffuseLighting"
+Shader "Unity Shaders Bible/USB_DiffuseLighting"
 {
     Properties
     {

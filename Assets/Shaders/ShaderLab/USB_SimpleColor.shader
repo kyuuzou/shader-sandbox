@@ -1,4 +1,4 @@
-Shader "Unlit/USB_Simple_Color"
+Shader "Unity Shaders Bible/USB_Simple_Color"
 {
     Properties
     {

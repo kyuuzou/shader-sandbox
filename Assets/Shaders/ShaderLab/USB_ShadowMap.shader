@@ -1,4 +1,4 @@
-Shader "Unlit/USB_ShadowMap"
+Shader "Unity Shaders Bible/USB_ShadowMap"
 {
     Properties
     {

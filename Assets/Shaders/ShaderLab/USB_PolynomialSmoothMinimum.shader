@@ -1,4 +1,4 @@
-Shader "Unlit/USB_PolynomialSmoothMinimum"
+Shader "Unity Shaders Bible/USB_PolynomialSmoothMinimum"
 {
     Properties
     {

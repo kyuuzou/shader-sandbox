@@ -1,4 +1,4 @@
-Shader "Unlit/USB_CubeMapReflection"
+Shader "Unity Shaders Bible/USB_CubeMapReflection"
 {
     Properties
     {

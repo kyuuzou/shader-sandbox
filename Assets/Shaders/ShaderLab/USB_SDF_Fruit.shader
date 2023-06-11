@@ -1,4 +1,4 @@
-Shader "Unlit/USB_SDF_Fruit"
+Shader "Unity Shaders Bible/USB_SDF_Fruit"
 {
     Properties
     {

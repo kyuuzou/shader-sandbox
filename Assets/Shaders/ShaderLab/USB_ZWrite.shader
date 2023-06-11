@@ -1,4 +1,4 @@
-Shader "Unlit/USB_ZWrite"
+Shader "Unity Shaders Bible/USB_ZWrite"
 {
     Properties
     {

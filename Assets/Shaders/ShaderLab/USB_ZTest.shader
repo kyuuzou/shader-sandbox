@@ -1,4 +1,4 @@
-Shader "Unlit/USB_ZTest"
+Shader "Unity Shaders Bible/USB_ZTest"
 {
     Properties
     {

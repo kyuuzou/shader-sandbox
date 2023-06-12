@@ -19,7 +19,6 @@ public class ColorShaderPropertyChanger : ShaderPropertyChanger<Color> {
 
     protected override void Update() {
         float hue = Mathf.Abs(Mathf.Sin(Time.time * this.speed)) * (maxHue - minHue) + minHue;
-        Debug.Log(Color.HSVToRGB(hue, saturation, brightness));
         this.SetProperty(Color.HSVToRGB(hue, saturation, brightness));
     }
 }

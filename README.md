@@ -9,7 +9,7 @@
   <img alt="GitHub last commit" src ="https://img.shields.io/github/last-commit/kyuuzou/shader-sandbox" />
 </p>
 <p align="center">
-  <a href="https://www.codacy.com/gh/kyuuzou/shader-sandbox/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kyuuzou/shader-sandbox&amp;utm_campaign=Badge_Grade" target="_blank"><img src="https://app.codacy.com/project/badge/Grade/7bc8986a48644f83b70de0a55fe29342"/></a>
+  <a href="https://app.codacy.com/gh/kyuuzou/shader-sandbox/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade" target="_blank"><img src="https://app.codacy.com/project/badge/Grade/597398a475754dfabb1c3696295451f4"/></a>
   <a href="https://unity3d.com/get-unity/download/archive" target="_blank"><img src="https://img.shields.io/badge/Unity-2022.3-blue" /></a>
   <a href="https://github.com/kyuuzou/shader-sandbox/blob/master/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg" />

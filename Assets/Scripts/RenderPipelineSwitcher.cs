@@ -16,7 +16,7 @@ public class RenderPipelineSwitcher : MonoBehaviour {
     
     private TMP_Dropdown dropdown;
 
-    public static RenderPipelineSwitcher Instance;
+    public static RenderPipelineSwitcher Instance { get; private set; }
 
     private void Awake() {
         Assert.IsNotNull(universalRenderPipelineAsset);

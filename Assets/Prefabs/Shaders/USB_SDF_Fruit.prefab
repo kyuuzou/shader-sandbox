@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1283076621376606366}
   - component: {fileID: 8919995693226730185}
   - component: {fileID: 3380905503444150017}
+  - component: {fileID: 8337755953243677168}
   m_Layer: 0
   m_Name: USB_SDF_Fruit
   m_TagString: Untagged
@@ -105,3 +106,20 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8337755953243677168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451079914237387750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4ca0295a1099b4fa1fe8e09ed03a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Description>k__BackingField: Simulates a fruit being cut, by discarding the pixels
+    above a certain threshold, and projecting a second texture on that threshold.
+  showSkybox: 0
+  toggleOtherBehaviours: 0
+  renderPipeline: 0

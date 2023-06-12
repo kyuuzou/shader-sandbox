@@ -68,8 +68,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4ca0295a1099b4fa1fe8e09ed03a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Description>k__BackingField: Toggles ZWrite on and off, making the Z-Buffer ignore
+    the depth distance between the camera and the objects, which in turn fixes Z-fighting.
   showSkybox: 0
-  <Description>k__BackingField: 
+  toggleOtherBehaviours: 0
+  renderPipeline: 0
 --- !u!1 &3312161915660710020
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2227991972340378049, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: <Description>k__BackingField
+      value: Toggles between blend modes, which determine how the GPU combines the
+        output of the fragment shader with the render target.
+      objectReference: {fileID: 0}
     - target: {fileID: 2435637604150582784, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: m_Name
       value: USB_Blending

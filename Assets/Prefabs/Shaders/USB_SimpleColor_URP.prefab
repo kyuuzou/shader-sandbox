@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: renderPipeline
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -2227991972340378049, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: <Description>k__BackingField
+      value: Applies a color to a given texture, using the Universal Rendering Pipeline.
+      objectReference: {fileID: 0}
     - target: {fileID: 2435637604150582784, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: m_Name
       value: USB_SimpleColor_URP

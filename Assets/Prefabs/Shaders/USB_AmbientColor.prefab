@@ -8,6 +8,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2227991972340378049, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: <Description>k__BackingField
+      value: Implements ambient lighting, represented by an onmi-present, omni-directional,
+        fixed-intensity and fixed-color light source that affects all objects in
+        a scene equally.
+      objectReference: {fileID: 0}
     - target: {fileID: 2435637604150582784, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: m_Name
       value: USB_AmbientColor

@@ -220,9 +220,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2227991972340378049, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: <Description>k__BackingField
+      value: Activates the Stencil Test, discarding specific fragments so that they
+        are not processed in the fragment shader stage, generating a mask effect,
+        which lets us see the capsule inside.
+      objectReference: {fileID: 0}
     - target: {fileID: 2435637604150582784, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: m_Name
-      value: USB_StencilValue
+      value: USB_StencilValue + USB_StencilRef
       objectReference: {fileID: 0}
     - target: {fileID: 5630742892296494895, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: m_Materials.Array.data[0]

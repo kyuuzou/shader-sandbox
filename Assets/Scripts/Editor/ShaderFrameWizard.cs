@@ -10,17 +10,25 @@ public class ShaderFrameWizard : ScriptableWizard {
     [SerializeField]
     private string shaderName = "NewShader";
 
+    private static readonly string ShaderFolderKey = "ShaderFolder";
+
     [MenuItem("Shader Sandbox/Create Shader Frame", priority = 'C')]
     static void CreateWizard() {
-        ScriptableWizard.DisplayWizard<ShaderFrameWizard>("Create Shader Frame", "Create");
-    }
+        ShaderFrameWizard wizard = ScriptableWizard.DisplayWizard<ShaderFrameWizard>("Create Shader Frame", "Create");
 
+        if (PlayerPrefs.HasKey(ShaderFolderKey)) {
+            wizard.shaderFolder = PlayerPrefs.GetString(ShaderFolderKey);
+        }
+    }
+    
     private void OnWizardCreate() {
         string prefabPath = "Assets/Prefabs/Actors/Frame.prefab";
         string variantPath = $"Assets/Prefabs/Shaders/{shaderName}.prefab";
         string materialPath = $"Assets/Materials/Shaders/{shaderName}.mat";
         string shaderPath = $"Assets/Shaders/ShaderLab/{shaderName}.shader";
         string templateShaderPath = "Assets/Shaders/Templates/ShaderLab.shader";
+
+        PlayerPrefs.SetString(ShaderFolderKey, shaderFolder);
 
         GameObject originalPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
         GameObject sceneObject = PrefabUtility.InstantiatePrefab(originalPrefab) as GameObject;

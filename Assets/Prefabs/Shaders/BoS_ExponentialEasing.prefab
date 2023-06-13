@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4612769347586348539
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -2227991972340378049, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: <Description>k__BackingField
+      value: Exponential shaping function where the control parameter permits the
+        designer to vary the function from an ease-out form to an ease-in form.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435637604150582784, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: m_Name
+      value: BoS_ExponentialEasing
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630742892296494895, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3f6ad74c5f25b84458b64c4e18c2a8b2, type: 2}
+    - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915348514721227089, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2435637604150582784, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4394598763359622488}
+  m_SourcePrefab: {fileID: 100100000, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+--- !u!1 &7047788407166815227 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2435637604150582784, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+  m_PrefabInstance: {fileID: 4612769347586348539}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4394598763359622488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7047788407166815227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72070e40ea8cac040ad168bc5c936d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propertyNames:
+  - _A
+  minValue: 0
+  maxValue: 1
+  speed: 1

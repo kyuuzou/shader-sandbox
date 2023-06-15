@@ -18,6 +18,9 @@ public class ShaderCollection : MonoBehaviour {
     [SerializeField]
     private string firstCategory = "Originals";
 
+    [SerializeField]
+    private string undefinedCategory = "Uncategorised";
+
     private Dictionary<string, List<Transform>> shaderPrefabsPerCategory;
 
     private void Awake() {
@@ -49,6 +52,11 @@ public class ShaderCollection : MonoBehaviour {
 
             ShaderFrame frame = asset.GetComponent<ShaderFrame>();
             string category = frame.Category;
+            
+            if (string.IsNullOrWhiteSpace(category)) {
+                category = this.undefinedCategory;
+                Debug.LogWarning($"Shader has no category: {frame.name}");
+            }
 
             if (!this.Categories.Contains(category)) {
                 this.Categories.Add(category);

@@ -120,10 +120,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4ca0295a1099b4fa1fe8e09ed03a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Category>k__BackingField: Unity Shaders Bible
   <Description>k__BackingField: Using the built-in RP, goes through two passes, "Shadow
     Caster" to project shadows, and "Shadow Map Texture" to receive shadows.
   showSkybox: 1
   toggleOtherBehaviours: 0
+  renderPipeline: 0
 --- !u!1 &1851482146860287678
 GameObject:
   m_ObjectHideFlags: 0

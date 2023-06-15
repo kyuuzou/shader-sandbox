@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -2227991972340378049, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: <Category>k__BackingField
+      value: Unity Shaders Bible
+      objectReference: {fileID: 0}
+    - target: {fileID: -2227991972340378049, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: <Description>k__BackingField
       value: Uses the `sin` and `cos` functions to implement rotation.
       objectReference: {fileID: 0}

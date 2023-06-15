@@ -119,10 +119,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4ca0295a1099b4fa1fe8e09ed03a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Category>k__BackingField: Unity Shaders Bible
   <Description>k__BackingField: Uses shader replacement to force the camera to render
     a different shader for all visible volumes.
   showSkybox: 0
   toggleOtherBehaviours: 1
+  renderPipeline: 0
 --- !u!114 &3609098525113209721
 MonoBehaviour:
   m_ObjectHideFlags: 0

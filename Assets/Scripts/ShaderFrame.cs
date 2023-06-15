@@ -5,6 +5,9 @@ using UnityEngine;
 public class ShaderFrame : MonoBehaviour {
 
     [field: SerializeField]
+    public string Category { get; private set; }
+
+    [field: SerializeField]
     public string Description { get; private set; }
 
     [SerializeField]

@@ -1,22 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 
-public class ScrollView : MonoBehaviour {
-
-    [SerializeField]
-    private DefaultAsset shaderPrefabFolder;
-    
-    [SerializeField, ReadOnly]
-    private List<Transform> shaderPrefabs;
+public class ShaderScrollView : MonoBehaviour {
 
     [SerializeField]
     private TMP_Text title;
 
     [SerializeField]
     private TMP_Text description;
+
+    [SerializeField]
+    private ShaderCollection shaderCollection;
 
     private int cachedFocusIncrement;
     private Transform focusedShader;
@@ -26,12 +22,16 @@ public class ScrollView : MonoBehaviour {
 
     private void Awake() {
         this.visibleShaders = new List<Transform>(5);
+        this.shaderCollection.CategoryChanged += this.OnCategoryChanged;
     }
-    
+
     private void ChangeFocusedShader(int focusIndex, int focusIncrement) {
         this.focusIndex = focusIndex;
 
-        this.focusedShader?.GetComponent<ShaderFrame>()?.OnLostFocus();
+        if (this.focusedShader != null) {
+            this.focusedShader.GetComponent<ShaderFrame>()?.OnLostFocus();
+        }
+
         this.focusedShader = this.visibleShaders[focusIncrement > 0 ? this.visibleShaders.Count - 1 : 0];
         this.title.text = this.focusedShader.name;
 
@@ -64,7 +64,7 @@ public class ScrollView : MonoBehaviour {
     private IEnumerator FocusCoroutine(int focusIncrement) {
         int focusIndex = this.focusIndex + focusIncrement;
 
-        if (! IsValidIndex(focusIndex)) {
+        if (! this.shaderCollection.IsValidIndex(focusIndex)) {
             this.focusEnumerator = null;
             yield break;
         }
@@ -94,7 +94,11 @@ public class ScrollView : MonoBehaviour {
     }
 
     private Transform Instantiate(int index, float x) {
-        Transform prefab = shaderPrefabs[index];
+        Transform prefab = this.shaderCollection.GetPrefab(index);
+
+        if (prefab == null) {
+            return null;
+        }
         
         Transform shader = Transform.Instantiate(
             prefab, 
@@ -107,26 +111,31 @@ public class ScrollView : MonoBehaviour {
         return shader;
     }
 
-    private bool IsValidIndex(int index) {
-        return index >= 0 && index < this.shaderPrefabs.Count;
-    }
-    
-    private void PrepareShaders() {
-        string rootPath = AssetDatabase.GetAssetPath(this.shaderPrefabFolder);
-        string[] guids = AssetDatabase.FindAssets("t:Prefab", new[]{ rootPath });
-        
-        foreach (string guid in guids) {
-            string assetPath = AssetDatabase.GUIDToAssetPath(guid);
-            Transform asset = AssetDatabase.LoadAssetAtPath<Transform>(assetPath);
-
-            if (asset != null) {
-                this.shaderPrefabs.Add(asset);
-            }
+    private void OnCategoryChanged(object sender, int categoryIndex) {
+        if (this.focusEnumerator != null) {
+            this.StopCoroutine(this.focusEnumerator);
+            this.focusEnumerator = null;
         }
+
+        this.visibleShaders.Clear();
+
+        foreach (Transform child in this.transform) {
+            GameObject.Destroy(child.gameObject);
+        }
+
+        for (int i = 0; i < 2; i++) {
+            this.visibleShaders.Add(this.Instantiate(i, i * 3.0f));
+        }
+
+        this.ChangeFocusedShader(0, 0);
+    }
+
+    private void OnDestroy() {
+        this.shaderCollection.CategoryChanged -= this.OnCategoryChanged;
     }
 
     private void RemoveOldShader(int focusIndex, int focusIncrement) {
-        if (IsValidIndex(focusIndex - focusIncrement * 2)) {
+        if (this.shaderCollection.IsValidIndex(focusIndex - focusIncrement * 2)) {
             int indexToRemove = focusIncrement > 0 ? 0 : this.visibleShaders.Count - 1;
             GameObject.Destroy(this.visibleShaders[indexToRemove].gameObject);
             this.visibleShaders.RemoveAt(indexToRemove);
@@ -134,7 +143,7 @@ public class ScrollView : MonoBehaviour {
     }
 
     private void SpawnNewShader(int focusIndex, int focusIncrement) {
-        if (IsValidIndex(focusIndex + focusIncrement)) {
+        if (this.shaderCollection.IsValidIndex(focusIndex + focusIncrement)) {
             Transform newShader = this.Instantiate(
                 focusIndex + focusIncrement,
                 focusIncrement * 3.0f * 2.0f
@@ -145,13 +154,7 @@ public class ScrollView : MonoBehaviour {
     }
 
     private void Start() {
-        this.PrepareShaders();
-
-        for (int i = 0; i < 2; i++) {
-            this.visibleShaders.Add(this.Instantiate(i, i * 3.0f));
-        }
-
-        this.ChangeFocusedShader(0, 0);
+        this.OnCategoryChanged(this, 0);
     }
 
     private void Update() {

@@ -9,13 +9,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -2227991972340378049, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
+      propertyPath: <Category>k__BackingField
+      value: Book of Shaders
+      objectReference: {fileID: 0}
+    - target: {fileID: -2227991972340378049, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: <Description>k__BackingField
       value: Seat-shaped function formed by joining two cubic curves, which meet
         at an horizontal inflection point at the control coordinate (a, b).
       objectReference: {fileID: 0}
     - target: {fileID: 2435637604150582784, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: m_Name
-      value: BoS_PolynomialShaping_DoubleCubicSeat
+      value: BoS_DoubleCubicSeat
       objectReference: {fileID: 0}
     - target: {fileID: 5630742892296494895, guid: 7bfa7c40044844102ad9dde83dc2ab44, type: 3}
       propertyPath: m_Materials.Array.data[0]

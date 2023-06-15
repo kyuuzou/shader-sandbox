@@ -227,10 +227,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4ca0295a1099b4fa1fe8e09ed03a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Category>k__BackingField: Unity Shaders Bible
   <Description>k__BackingField: Alternate implementation of USB_ShadowMap, leveraging
     built-in macros to simplify code.
   showSkybox: 1
   toggleOtherBehaviours: 0
+  renderPipeline: 0
 --- !u!1 &2087513840235243465
 GameObject:
   m_ObjectHideFlags: 0

@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4ca0295a1099b4fa1fe8e09ed03a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Category>k__BackingField: Unity Shaders Bible
+  <Category>k__BackingField: 'Unity Shaders Bible #2: Lighting, Shadows and Surfaces'
   <Description>k__BackingField: Alternate implementation of USB_ShadowMap, targetting
     the Universal Rendering Pipeline.
   showSkybox: 1

@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4ca0295a1099b4fa1fe8e09ed03a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Category>k__BackingField: Unity Shaders Bible
+  <Category>k__BackingField: 'Unity Shaders Bible #1: Introduction'
   <Description>k__BackingField: Toggles ZWrite on and off, making the Z-Buffer ignore
     the depth distance between the camera and the objects, which in turn fixes Z-fighting.
   showSkybox: 0

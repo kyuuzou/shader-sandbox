@@ -15,6 +15,9 @@ public class ShaderCollection : MonoBehaviour {
     [SerializeField]
     private DefaultAsset shaderPrefabFolder;
 
+    [SerializeField]
+    private string firstCategory = "Originals";
+
     private Dictionary<string, List<Transform>> shaderPrefabsPerCategory;
 
     private void Awake() {
@@ -56,6 +59,10 @@ public class ShaderCollection : MonoBehaviour {
         }
 
         this.Categories.Sort();
+
+        // force a privileged category to go first
+        this.Categories.Remove(this.firstCategory);
+        this.Categories.Insert(0, this.firstCategory);
     }
 
     public bool IsValidIndex(int index) {

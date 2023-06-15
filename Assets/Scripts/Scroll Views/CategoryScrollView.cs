@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CategoryScrollView : MonoBehaviour {
 
@@ -22,6 +23,10 @@ public class CategoryScrollView : MonoBehaviour {
     private TMP_Text selectedMesh;
     private List<TMP_Text> textMeshes;
 
+    private void Awake() {
+        this.textMeshes = new List<TMP_Text>();
+    }
+
     private void OnCategoryChanged(object sender, int category) {
         if (this.selectedMesh != null) {
             this.selectedMesh.color = this.unselectedColor;
@@ -29,6 +34,10 @@ public class CategoryScrollView : MonoBehaviour {
 
         this.selectedMesh = this.textMeshes[category];
         this.selectedMesh.color = this.selectedColor;
+
+        Vector3 localPosition = this.contentRoot.localPosition;
+        localPosition.y = - this.selectedMesh.transform.localPosition.y;
+        this.contentRoot.localPosition = localPosition;
     }
 
     private void OnDestroy() {
@@ -36,8 +45,6 @@ public class CategoryScrollView : MonoBehaviour {
     }
 
     private void SpawnCategories() {
-        this.textMeshes = new List<TMP_Text>();
-
         float lastY = 0;
 
         foreach (string category in this.shadercollection.Categories) {

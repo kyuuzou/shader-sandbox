@@ -80,12 +80,12 @@ public class ShaderScrollView : MonoBehaviour {
         
         do {
             position.x = Mathf.SmoothDamp(position.x, targetPosition.x, ref currentVelocity, smoothTime);
-            smoothTime -= Time.deltaTime;
+            smoothTime = Mathf.Max(0.0f, smoothTime - Time.deltaTime);
 
             this.transform.position = position;
             
             yield return null;
-        } while (smoothTime > 0.0f);
+        } while (! Mathf.Approximately(targetPosition.x - position.x, 0.0f));
 
         this.RemoveOldShader(focusIndex, focusIncrement);
 

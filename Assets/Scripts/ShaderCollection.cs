@@ -7,17 +7,18 @@ public class ShaderCollection : MonoBehaviour {
 
     public event EventHandler<int> CategoryChanged;
 
+    public List<string> Categories { get; private set; }
+
     public int CurrentCategoryIndex { get; private set; }
-    public string CurrentCategory => this.categories[this.CurrentCategoryIndex];
+    public string CurrentCategory => this.Categories[this.CurrentCategoryIndex];
 
     [SerializeField]
     private DefaultAsset shaderPrefabFolder;
 
-    private List<string> categories;
     private Dictionary<string, List<Transform>> shaderPrefabsPerCategory;
 
     private void Awake() {
-        this.categories = new List<string>();
+        this.Categories = new List<string>();
         this.shaderPrefabsPerCategory = new Dictionary<string, List<Transform>>();
 
         this.InitializePrefabs();
@@ -46,15 +47,15 @@ public class ShaderCollection : MonoBehaviour {
             ShaderFrame frame = asset.GetComponent<ShaderFrame>();
             string category = frame.Category;
 
-            if (!this.categories.Contains(category)) {
-                this.categories.Add(category);
+            if (!this.Categories.Contains(category)) {
+                this.Categories.Add(category);
                 this.shaderPrefabsPerCategory[category] = new List<Transform>();
             }
 
             this.shaderPrefabsPerCategory[category].Add(asset);
         }
 
-        this.categories.Sort();
+        this.Categories.Sort();
     }
 
     public bool IsValidIndex(int index) {
@@ -64,7 +65,7 @@ public class ShaderCollection : MonoBehaviour {
     public bool TrySetCategory(int increment) {
         int categoryIndex = this.CurrentCategoryIndex + increment;
 
-        if (categoryIndex < 0 || this.categories.Count <= categoryIndex) {
+        if (categoryIndex < 0 || this.Categories.Count <= categoryIndex) {
             return false;
         }
 

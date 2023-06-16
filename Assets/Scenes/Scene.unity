@@ -334,7 +334,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2068904939}
   m_Direction: 2
   m_Value: 0.9999998
-  m_Size: 0.045
+  m_Size: 0.044979915
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -766,6 +766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shaderPrefabFolder: {fileID: 102900000, guid: f6f3f0770ebac4a0483b5c6897ae51a4, type: 3}
   firstCategory: Originals
+  undefinedCategory: Uncategorised
 --- !u!4 &513157874
 Transform:
   m_ObjectHideFlags: 0

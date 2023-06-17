@@ -10,7 +10,11 @@ public class ShaderFrameWizard : ScriptableWizard {
     [SerializeField]
     private string shaderName = "NewShader";
 
+    [SerializeField]
+    private string templateName = "ShaderLab";
+
     private static readonly string ShaderFolderKey = "ShaderFolder";
+    private static readonly string TemplateNameKey = "TemplateName";
 
     [MenuItem("Shader Sandbox/Create Shader Frame", priority = 'C')]
     static void CreateWizard() {
@@ -19,6 +23,10 @@ public class ShaderFrameWizard : ScriptableWizard {
         if (PlayerPrefs.HasKey(ShaderFolderKey)) {
             wizard.shaderFolder = PlayerPrefs.GetString(ShaderFolderKey);
         }
+
+        if (PlayerPrefs.HasKey(ShaderFolderKey)) {
+            wizard.templateName = PlayerPrefs.GetString(TemplateNameKey);
+        }
     }
     
     private void OnWizardCreate() {
@@ -26,9 +34,10 @@ public class ShaderFrameWizard : ScriptableWizard {
         string variantPath = $"Assets/Prefabs/Shaders/{shaderName}.prefab";
         string materialPath = $"Assets/Materials/Shaders/{shaderName}.mat";
         string shaderPath = $"Assets/Shaders/ShaderLab/{shaderName}.shader";
-        string templateShaderPath = "Assets/Shaders/Templates/ShaderLab.shader";
+        string templateShaderPath = $"Assets/Shaders/Templates/{templateName}.shader";
 
         PlayerPrefs.SetString(ShaderFolderKey, shaderFolder);
+        PlayerPrefs.SetString(TemplateNameKey, templateName);
 
         GameObject originalPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
         GameObject sceneObject = PrefabUtility.InstantiatePrefab(originalPrefab) as GameObject;

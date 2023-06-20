@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.patriciogonzalezvivo.lygia": {
+      "version": "https://github.com/kyuuzou/lygia.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "9615fa6b3c4a64c3b3a5c295ba4ddd66fa16d735"
+    },
     "com.unity.burst": {
       "version": "1.8.4",
       "depth": 1,

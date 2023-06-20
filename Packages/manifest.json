@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.patriciogonzalezvivo.lygia": "https://github.com/kyuuzou/lygia.git",
     "com.unity.collab-proxy": "2.0.4",
     "com.unity.feature.development": "1.0.1",
     "com.unity.render-pipelines.universal": "14.0.8",

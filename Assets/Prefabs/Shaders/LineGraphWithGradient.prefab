@@ -90,8 +90,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124315065afa143a29fb24d0f8951109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coordinates:
-  - {x: 0, y: 0.5, z: 0, w: 0}
-  - {x: 0.33, y: 0.8, z: 0, w: 0}
-  - {x: 0.66, y: 0.3, z: 0, w: 0}
-  - {x: 1, y: 0.5, z: 0, w: 0}
+  speed: 0.5
+  numberOfPoints: 32

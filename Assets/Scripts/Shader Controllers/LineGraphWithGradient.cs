@@ -1,32 +1,63 @@
-using System;
 using UnityEngine;
 
-[ExecuteInEditMode]
 [RequireComponent(typeof(MeshRenderer))]
 public class LineGraphWithGradient : MonoBehaviour
 {
-    [Header("Maximum number of supported coordinates: 32")]
     [SerializeField]
-    private Vector4[] coordinates;
+    private float speed = 1.0f;
 
-    private static readonly string coordinatesProperty = "_Coordinates";
-    private static readonly string numberOfPointsProperty = "_NumberOfPoints";
+    [Range(2, 32)]
+    [SerializeField]
+    private int numberOfPoints = 4;
     
-    private void Start()
+    private static readonly int CoordinatesProperty = Shader.PropertyToID("_Coordinates");
+    private static readonly int NumberOfPointsProperty = Shader.PropertyToID("_NumberOfPoints");
+
+    private Vector4[] coordinates;
+    private Vector2[] initialCoordinates;
+    private MeshRenderer meshRenderer;
+    private MaterialPropertyBlock propertyBlock;
+
+    private void Awake()
     {
+        meshRenderer = GetComponent<MeshRenderer>();
+        propertyBlock = new MaterialPropertyBlock();
+
+        InitializeCoordinates();
+    }
+
+    private void Update()
+    {
+        AnimateCoordinates();
         UpdateCoordinates();
     }
 
-    private void OnValidate()
+    private void AnimateCoordinates()
     {
-        UpdateCoordinates();
+        for (int i = 0; i < coordinates.Length; i++)
+        {
+            coordinates[i].y = Mathf.PingPong(initialCoordinates[i].y + Time.time * speed, 1.0f);
+        }
     }
 
+    private void InitializeCoordinates()
+    {
+        coordinates = new Vector4[numberOfPoints];
+        initialCoordinates = new Vector2[numberOfPoints];
+
+        float segmentWidth = 1.0f / (numberOfPoints - 1);
+        
+        for (int i = 0; i < numberOfPoints; i++)
+        {
+            Vector2 coordinate = new Vector2(segmentWidth * i, Random.Range(0.0f, 1.0f));
+            coordinates[i] = initialCoordinates[i] = coordinate;
+        }
+    }
+    
     private void UpdateCoordinates()
     {
-        MaterialPropertyBlock materialBlock = new MaterialPropertyBlock();
-        materialBlock.SetVectorArray(coordinatesProperty, coordinates);
-        materialBlock.SetInt(numberOfPointsProperty, coordinates.Length);
-        GetComponent<MeshRenderer>().SetPropertyBlock(materialBlock);
+        propertyBlock.SetVectorArray(CoordinatesProperty, coordinates);
+        propertyBlock.SetInt(NumberOfPointsProperty, coordinates.Length);
+        meshRenderer.SetPropertyBlock(propertyBlock);
     }
 }
